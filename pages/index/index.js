@@ -1,6 +1,8 @@
 import { Base64 } from 'js-base64'
 Page({
   onGetToken(){
+    console.log('123')
+    
     wx.login({
       complete: (res) => {
         if(res.code){
@@ -20,6 +22,8 @@ Page({
               }
             }
           })
+        }else{
+          console.log('登录失败！' + res.errMsg)
         }
       },
     })
