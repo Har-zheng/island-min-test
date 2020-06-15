@@ -1,0 +1,4 @@
+<l-button size="long"  bind:lintap="onGetToken">获取token</l-button>
+<!-- <button >获取token</button> -->
+<l-button size="long"  l-class="btn" bind:lintap="onVerify">验证token</l-button>
+<l-button size="long"  l-class="btn" type="warning" bind:lintap="onGetClassis">获取数据</l-button>
