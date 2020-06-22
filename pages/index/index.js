@@ -88,6 +88,32 @@ Page({
       }
     })
   },
+  onGetPrevios(){
+    wx.request({
+      url: 'http://localhost:3000/v1/classic/8/previous',
+      method: "GET",
+      header: {
+        Authorization: this._encode()
+      },
+      success:(res)=> {
+        console.log(wx.getStorageSync('token'))
+        console.log(res)
+      }
+    })
+  },
+  onGetNext(){
+    wx.request({
+      url: 'http://localhost:3000/v1/classic/5/next',
+      method: "GET",
+      header: {
+        Authorization: this._encode()
+      },
+      success:(res)=> {
+        console.log(wx.getStorageSync('token'))
+        console.log(res)
+      }
+    })
+  },
   _encode(){
     const token = wx.getStorageSync('token')
     const base64 = Base64.encode(token+':')
