@@ -114,6 +114,32 @@ Page({
       }
     })
   },
+  onGetFavor(){
+    wx.request({
+      url: 'http://localhost:3000/v1/classic/1/200/favor',
+      method: "GET",
+      header: {
+        Authorization: this._encode()
+      },
+      success:(res)=> {
+        console.log(wx.getStorageSync('token'))
+        console.log(res)
+      }
+    })
+  },
+  onGetFavorList(){
+    wx.request({
+      url: 'http://localhost:3000/v1/classic/favor',
+      method: "GET",
+      header: {
+        Authorization: this._encode()
+      },
+      success:(res)=> {
+        console.log(wx.getStorageSync('token'))
+        console.log(res)
+      }
+    })
+  },
   _encode(){
     const token = wx.getStorageSync('token')
     const base64 = Base64.encode(token+':')
