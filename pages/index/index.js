@@ -60,7 +60,7 @@ Page({
       method: "POST",
       data: {
         art_id: 1,
-        type: 100
+        type: 200
       },
       header: {
         Authorization: this._encode()
